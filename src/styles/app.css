@@ -1,14 +1,18 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
+  background: #f1f1f1;
 }
+
 table {
   border-collapse: collapse;
   min-width: 100%;
   border-spacing: 0;
 }
+
 table td {
   border: 1px solid #5b616b;
 }
@@ -35,4 +39,76 @@ h2 a.tutorial-header-link {
 
 h2:hover a.tutorial-header-link {
   text-decoration: underline;
+}
+
+@media (min-width: 360px) {
+  #dropdown-nav {
+    display: none;
+  }
+  #left-nav {
+    display: block;
+  }
+}
+
+@media (max-width: 360px) {
+  #dropdown-nav {
+    display: block;
+  }
+  #left-nav {
+    display: none;
+  }
+  .ds-text--lead {
+    font-size: 12px;
+  }
+}
+
+/*Overrides*/
+.usa-sidenav-list a.usa-current {
+  border-left: 4px solid #2eb1ed;
+  color: #125496;
+  font-weight: 500;
+  background-color: #f1f1f1;
+}
+
+.usa-sidenav-list>li {
+  border-top: none;
+}
+
+.usa-sidenav-list a {
+  padding-left: 1.4rem;
+  font-weight: 500;
+}
+
+.usa-sidenav-list a:hover {
+  border-left: 4px solid #2eb1ed;
+  color: #125496;
+}
+
+.left-nav-label {
+  display: block;
+  padding-top: 2rem;
+  padding-left: 1.4rem;
+}
+
+.light-grey-border {
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+
+div#left-nav-div {
+  background: white;
+  padding: 0px;
+}
+
+div#outer-content-div {
+  padding-left: 4%;
+}
+
+div#inner-content-div {
+  padding: 1.4rem;
+  background-color: white;
+}
+
+a.ds-c-button--primary:visited {
+  color: white;
 }

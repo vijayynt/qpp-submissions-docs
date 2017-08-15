@@ -38,6 +38,7 @@
     "extends": "react-app"
   },
   "dependencies": {
+    "@cmsgov/design-system-layout": "^1.0.0",
     "jest-cli": "^20.0.4",
     "react-router-dom": "^4.1.2"
   }

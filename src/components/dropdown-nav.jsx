@@ -28,7 +28,6 @@ class DropdownNav extends React.PureComponent {
   }
 
   render() {
-    console.log(this.state.path)
     return <select id="options" value={this.state.path} onChange={this.handleDropdownSelect}>
       {DropdownListItems}
     </select>

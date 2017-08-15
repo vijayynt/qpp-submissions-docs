@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
+import '../../node_modules/@cmsgov/design-system-layout/dist/index.css';
+import '../../node_modules/uswds/dist/css/uswds.min.css';
 import { Route } from 'react-router-dom'
 
 import '../styles/app.css';
@@ -10,6 +12,8 @@ import '../styles/usa-banner.css';
 import Header from './header';
 import Routes from './routes';
 import DropdownNav from './dropdown-nav';
+// TODO(aimee): May want to see if we can replace this with cms design system's <VerticalNav />
+// https://cmsgov.github.io/design-system/components/vertical-nav/
 import LeftNav from './left-nav';
 import Introduction from './introduction';
 
@@ -31,20 +35,20 @@ class App extends React.PureComponent {
           <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
         </div>
         <div className="container">
-          <div className="temp-grid-container">
+          <div className="ds-l-row">
             <div id="dropdown-nav">
               <form className="usa-form">
                 <DropdownNav />
               </form>
             </div>
 
-            <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
-              <ul className="ds-c-vertical-nav__subnav">
+            <div id="left-nav-div" className="ds-l-col--3 light-grey-border">
+              <ul id="left-nav" className="usa-sidenav-list">
                 {LeftNav}
               </ul>
             </div>
-            <div className="ds-u-float--left ds-u-padding--1 page">
-              <div className="ds-u-measure--wide">
+            <div id="outer-content-div" className="ds-u-float--left ds-l-col--9">
+              <div id="inner-content-div" className="light-grey-border">
                 <Route exact path="/" component={Introduction} />
                 <Route exact path="/:componentKey" render={getComponent}/>
               </div>

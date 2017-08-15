@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 import App from './components/app';
-import './styles/index.css';
 
 ReactDOM.render(
   // According to the docs, forceRefresh is required for browsers which don't
