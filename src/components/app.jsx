@@ -9,6 +9,7 @@ import '../styles/usa-banner.css';
 
 import Header from './header';
 import Routes from './routes';
+import DropdownNav from './dropdown-nav';
 import LeftNav from './left-nav';
 import Introduction from './introduction';
 
@@ -31,6 +32,12 @@ class App extends React.PureComponent {
         </div>
         <div className="container">
           <div className="temp-grid-container">
+            <div id="dropdown-nav">
+              <form className="usa-form">
+                <DropdownNav />
+              </form>
+            </div>
+
             <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
               <ul className="ds-c-vertical-nav__subnav">
                 {LeftNav}
