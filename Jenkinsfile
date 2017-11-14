@@ -6,10 +6,15 @@ node('default') {
     def PULL_REQUEST = env.CHANGE_ID
     withCredentials([[$class: 'StringBinding', credentialsId: 'navadevops-personal-token', variable: 'GITHUB_ACCESS_TOKEN']]) {
       withSonarQubeEnv('sonarcloud') {
-        sh "${scannerHome}/bin/sonar-scanner " + 
-                        "-Dsonar.analysis.mode=preview " +
-                        "-Dsonar.github.pullRequest=${PULL_REQUEST} " +
-                        "-Dsonar.github.oauth=${GITHUB_ACCESS_TOKEN}"
+        def sonarcmd = "${scannerHome}/bin/sonar-scanner "
+
+        if (PULL_REQUEST) {
+          sonarcmd = sonarcmd +
+            "-Dsonar.analysis.mode=preview " +
+            "-Dsonar.github.pullRequest=${PULL_REQUEST} " +
+            "-Dsonar.github.oauth=${GITHUB_ACCESS_TOKEN}"
+        }
+        sh sonarcmd
       }
     }
   }
