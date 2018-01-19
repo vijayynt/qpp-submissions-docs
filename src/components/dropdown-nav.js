@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
-import Routes from './routes';
-
-const DropdownListItems = Routes.mergedRoutes.reduce(function(result, routeObject) {
-  return result.concat(<option key={routeObject.path} value={routeObject.path}>{ routeObject.linkText }</option>);
-}, []);
+import TabRoutes from './tab-routes';
 
 class DropdownNav extends React.PureComponent {
   constructor(props) {
     super(props);
     this.handleDropdownSelect = this.handleDropdownSelect.bind(this);
+    
+    this.dropdownListItems = TabRoutes[this.props.tab].mergedRoutes.reduce(function(result, routeObject) {
+      return result.concat(<option key={routeObject.path} value={routeObject.path}>{ routeObject.linkText }</option>);
+    }, []);
   }
 
   handleDropdownSelect(e) {
@@ -21,12 +21,13 @@ class DropdownNav extends React.PureComponent {
 
   render() {
     return <select id='options' className='ds-c-field ds-c-field--select' value={this.props.location.pathname} onChange={this.handleDropdownSelect}>
-      {DropdownListItems}
+      {this.dropdownListItems}
     </select>;
   }
 }
 
 DropdownNav.propTypes = {
+  tab: PropTypes.string.isRequired,
   history: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired
 };

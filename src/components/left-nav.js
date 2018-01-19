@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import Routes from './routes';
+import TabRoutes from './tab-routes';
 
 import '../styles/left-nav.css';
 
@@ -29,19 +29,26 @@ class NavSection extends React.Component {
     return <li>
       <ul className='ds-c-vertical-nav left-nav'>
         <li className={'ds-c-vertical-nav__item ds-u-font-weight--semibold ' + leftNavPaddingClasses}>{this.props.name.toUpperCase()}</li>
-        {createLinksListItems(Routes[this.props.groupIndex])}
+        {createLinksListItems(TabRoutes[this.props.tab][this.props.groupIndex])}
       </ul>
     </li>;
   }
 }
 
 NavSection.propTypes = {
+  tab: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   groupIndex: PropTypes.number.isRequired
 };
 
-const LeftNav = Routes.map((routeGroup, index) => {
-  return <NavSection key={routeGroup.groupTitle} groupIndex={index} name={routeGroup.groupTitle} />;
-});
+class LeftNav extends React.Component {
+  render() {
+    let tab = TabRoutes[this.props.tab].map((routeGroup, index) => {
+      return <NavSection tab={this.props.tab} key={routeGroup.groupTitle} groupIndex={index} name={routeGroup.groupTitle} />;
+    });
+
+    return <div>{tab}</div>
+  }
+}
 
 export default LeftNav;

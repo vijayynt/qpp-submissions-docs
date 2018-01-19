@@ -23,6 +23,10 @@
   padding: 0.6em;
 }
 
+.inline-api-example-request__url code {
+  word-wrap: break-word;
+}
+
 .inline-api-example__params {
   margin: 0;
   padding: 1em;

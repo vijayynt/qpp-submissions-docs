@@ -1,12 +1,12 @@
 import React from 'react';
 import { Tabs } from 'react-tabs';
 
-import InlineApiExample from './common/inline-api-example';
-import Advanced1 from './common/steps/advanced-1';
-import Advanced2 from './common/steps/advanced-2';
-import Advanced3 from './common/steps/advanced-3';
-import Advanced4 from './common/steps/advanced-4';
-import Advanced5 from './common/steps/advanced-5';
+import InlineApiExample from '../common/inline-api-example';
+import Advanced1 from '../common/steps/advanced-1';
+import Advanced2 from '../common/steps/advanced-2';
+import Advanced3 from '../common/steps/advanced-3';
+import Advanced4 from '../common/steps/advanced-4';
+import Advanced5 from '../common/steps/advanced-5';
 
 class AdvancedTutorial extends React.Component {
   render() {

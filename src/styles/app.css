@@ -83,3 +83,33 @@ a.qpp-docs-title-back {
 a.ds-c-button:visited {
   color: white;
 }
+
+.tab {
+  overflow: hidden;
+}
+
+.tab h3 {
+  background-color: inherit;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;  
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab h3 a {
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+}
+
+/* Change background color of buttons on hover */
+.tab h3:hover {
+  //border-bottom: 1px solid #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab h3.active {
+  border-bottom: 1px solid #ddd;  
+}

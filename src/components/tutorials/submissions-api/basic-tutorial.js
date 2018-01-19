@@ -1,10 +1,10 @@
 import React from 'react';
 import { Tabs } from 'react-tabs';
 
-import InlineApiExample from './common/inline-api-example';
-import Basic1 from './common/steps/basic-1';
-import Basic2 from './common/steps/basic-2';
-import Basic3 from './common/steps/basic-3';
+import InlineApiExample from '../common/inline-api-example';
+import Basic1 from '../common/steps/basic-1';
+import Basic2 from '../common/steps/basic-2';
+import Basic3 from '../common/steps/basic-3';
 
 class BasicTutorial extends React.Component {
   render() {
