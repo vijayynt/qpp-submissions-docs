@@ -1,6 +1,7 @@
 // Topics
 import Introduction from './introduction';
 import DeveloperPreview from './developer-preview';
+import FAQ from './faq';
 
 // Guides
 import AdvancedTutorial from './tutorials/advanced-tutorial';
@@ -32,6 +33,12 @@ const topicsPaths = [
     exact: true,
     linkText: 'Developer Preview',
     component: DeveloperPreview
+  },
+  {
+    path: '/faq',
+    exact: true,
+    linkText: 'FAQ',
+    component: FAQ
   }
 ];
 
